@@ -1,6 +1,4 @@
-Certainly, here's the README content in Markdown format that you can copy and paste into a `.md` file for your project:
 
-```markdown
 # YourBuddy
 
 YourBuddy is a web application that assesses a user's mood based on their responses to questions and provides mood-related suggestions to improve their mood. This README file provides an overview of the project, installation instructions, usage guidelines, and additional information.
