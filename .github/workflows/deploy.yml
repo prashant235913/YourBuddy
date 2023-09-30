@@ -22,7 +22,9 @@ jobs:
 
       - name: Sync website with S3
         run: |
-          aws s3 sync https://github.com/prashant235913/YourBuddy s3://yourbuddy.eatandcode.site --delete
+          git clone https://github.com/prashant235913/YourBuddy.git /tmp/YourBuddy
+          aws s3 sync /tmp/YourBuddy s3://yourbuddy.eatandcode.site --delete
+
         env:
           AWS_DEFAULT_REGION: us-west-2 # Change to your AWS region
 
