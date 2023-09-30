@@ -1,0 +1,28 @@
+name: Deploy to AWS S3
+
+on:
+  push:
+    branches:
+      - main # Change this to your main branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{AKIAXZFGEOEWO4MIY76G}}
+          aws-secret-access-key: ${{R44l2cAqKaF/99BSZJJq4wH8YZxlEpVJr7Q/ddWF}}
+          aws-region: us-west-2 # Change to your AWS region
+
+      - name: Sync website with S3
+        run: |
+          aws s3 sync https://github.com/prashant235913/YourBuddy/ s3://yourbuddy.eatandcode.site --delete
+        env:
+          AWS_DEFAULT_REGION: us-west-2 # Change to your AWS region
+
